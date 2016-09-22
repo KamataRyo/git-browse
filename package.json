@@ -1,14 +1,34 @@
 {
   "name": "git-browse",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "git-browse opens a Github repository with browser.",
-  "bin": "index.js",
+  "keywords": [
+    "git",
+    "CLI",
+    "terminal"
+  ],
+  "bin": {
+    "git-browse": "index.js"
+  },
   "preferGlobal": true,
-  "os" : [ "darwin"],
-  "engines": { "node": ">=4.0.0" },
+  "os": [
+    "darwin"
+  ],
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "KamataRyo <mugil.cephalus+github.com@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KamataRyo/git-browse.git"
+  },
+  "bugs": {
+    "url": "https://github.com/KamataRyo/git-browse/issues"
+  },
+  "homepage": "https://github.com/KamataRyo/git-browse#readme"
 }
