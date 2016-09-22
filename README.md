@@ -1,10 +1,13 @@
 # git-browse
 
+[![npm version](https://badge.fury.io/js/git-browse.svg)](https://badge.fury.io/js/git-browse)
+
 `git browse repo` opens your github repo with browser.
 
 ## Dependency
 
-Mac OS only
+- Mac OS only, sorry.
+- Depends on `git`
 
 ## Usage
 
