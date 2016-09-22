@@ -2,16 +2,17 @@
 
 [![npm version](https://badge.fury.io/js/git-browse.svg)](https://badge.fury.io/js/git-browse)
 
-`git browse repo` opens your github repo with browser.
+git-browse opens your Github repository with browser.
 
 ## Dependency
 
-- Mac OS only, sorry.
+- Mac OS only.
 - Depends on `git`
 
 ## Usage
 
-Commands below open browser and locate the Github repositories.
+The commands below open browser and locate the Github repositories.
+Without username argument, the command locates your repository.
 
 ```
 $ git browse user repo

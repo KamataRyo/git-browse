@@ -1,7 +1,7 @@
 {
   "name": "git-browse",
-  "version": "0.0.3",
-  "description": "`git browse repo` opens your github repo with browser.",
+  "version": "0.0.4",
+  "description": "git-browse opens a Github repository with browser.",
   "bin": "index.js",
   "preferGlobal": true,
   "os" : [ "darwin"],
@@ -10,9 +10,5 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "KamataRyo <mugil.cephalus+github.com@gmail.com>",
-  "license": "MIT",
-  "config": {
-    "host": "github.com",
-    "protocol": "https"
-  }
+  "license": "MIT"
 }
