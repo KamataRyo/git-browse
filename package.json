@@ -1,6 +1,6 @@
 {
   "name": "git-browse",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "git-browse opens a Github repository with browser.",
   "keywords": [
     "git",
@@ -11,9 +11,6 @@
     "git-browse": "index.js"
   },
   "preferGlobal": true,
-  "os": [
-    "darwin"
-  ],
   "engines": {
     "node": ">=4.0.0"
   },
@@ -30,5 +27,9 @@
   "bugs": {
     "url": "https://github.com/KamataRyo/git-browse/issues"
   },
-  "homepage": "https://github.com/KamataRyo/git-browse#readme"
+  "homepage": "https://github.com/KamataRyo/git-browse#readme",
+  "config": {
+      "protocol": "https",
+      "host": "github.com"
+  }
 }

@@ -3,6 +3,8 @@
 
     var exec = require('child_process').exec
     var os = require('os')
+    var meta = require('./package.json')
+
     var username
     var reponame
 
@@ -18,6 +20,11 @@
     } else if (process.argv.length > 3) {
         // case `git browse user repo`
         [username, reponame] = [process.argv[2], process.argv[3]]
+    }
+
+    if (!reponame) {
+        console.log(`${meta.name} v${meta.version}`)
+        return
     }
 
     // Asynchronization
@@ -43,7 +50,7 @@
     })).then((username) => {
         reponame = reponame ? reponame : ''
         var open = 'Win32'  == os.type() ? 'start' : 'open'
-        var url = `https://github.com/${username}/${reponame}`
+        var url = `${meta.config.protocol}://${meta.config.host}/${username}/${reponame}`
         var locator = `${open} ${url}`
         console.log(`[info] Executing \`${locator}\``)
         exec(locator, (err, stdout, stdin) => {
