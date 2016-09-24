@@ -9,6 +9,12 @@ git-browse opens your Github repository with browser.
 - Mac OS only.
 - Depends on `git`
 
+## Install
+
+```
+$ npm i -g git-browse
+```
+
 ## Usage
 
 The commands below open browser and locate the Github repositories.
@@ -20,8 +26,13 @@ $ git browse user/repo
 $ git browse repo
 ```
 
-## Install
+## tab completion
+
+it's Beta. Unfortunately, this version overwrites existing tab completion for git. (i.e. [git-completion](https://github.com/git/git/blob/master/contrib/completion/git-completion.bash))
 
 ```
-$ npm i -g git-browse
+$ curl https://raw.githubusercontent.com/KamataRyo/git-browse/master/bin/git-browse-competion.sh > ~/.git-browse-competion.sh
+$ curl https://raw.githubusercontent.com/KamataRyo/git-browse/master/bin/git-browse-github-search.js > /usr/bin/git-browse-github-search
+$ chmod +x /usr/bin/git-browse-github-search
+$ echo 'source ~/.git-browse-competion.sh' >> ~/.bashrc
 ```
