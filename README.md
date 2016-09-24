@@ -31,8 +31,7 @@ $ git browse repo
 it's Beta. Unfortunately, this version overwrites existing tab completion for git. (i.e. [git-completion](https://github.com/git/git/blob/master/contrib/completion/git-completion.bash))
 
 ```
+$ npm i -g git-browse@0.0.8beta
 $ curl https://raw.githubusercontent.com/KamataRyo/git-browse/master/bin/git-browse-competion.sh > ~/.git-browse-competion.sh
-$ curl https://raw.githubusercontent.com/KamataRyo/git-browse/master/bin/git-browse-github-search.js > /usr/bin/git-browse-github-search
-$ chmod +x /usr/bin/git-browse-github-search
 $ echo 'source ~/.git-browse-competion.sh' >> ~/.bashrc
 ```

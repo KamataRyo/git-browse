@@ -1,6 +1,6 @@
 {
   "name": "git-browse",
-  "version": "0.0.7",
+  "version": "0.0.8beta",
   "description": "git-browse opens a Github repository with browser.",
   "keywords": [
     "git",
@@ -37,6 +37,6 @@
     "should": "^11.1.0"
   },
   "dependencies": {
-    "request": "^2.75.0"
+    "git-browse-github-search": "0.0.1"
   }
 }

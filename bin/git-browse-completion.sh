@@ -19,7 +19,7 @@ _git-browse() {
 _git-browse_sub() {
     local user
     local repo
-    if [[ $COMP_CWORD == 2 ]]; then
+    if [[ $COMP_CWORD == 2 && ${COMP_WORDS[1]} == 'browse' ]]; then
         user=$(git config --get user.name)
         COMPREPLY=( $(compgen -W "$user" -- $user) )
     elif [[ $COMP_CWORD == 3 ]]; then
