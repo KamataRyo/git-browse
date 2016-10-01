@@ -23,14 +23,17 @@ Without username argument, the command locates your repository.
 $ git browse user repo
 $ git browse user/repo
 $ git browse repo
+$ git-browse user repo
+$ git-browse user/repo
+$ git-browse repo
 ```
 
-## tab completion
+## Tab Completion
 
 ```
 $ git-browse --completion >> ~/.bashrc
 ```
 
-`git-browse-completion` works against `git-browse` command.
-Completion for 1st argument complete your git username.
-Completion for 2nd argument complete repository name for the user on 1st argument.
+`git-browse-completion` works against `git-browse` command only, not for `git browse` subcommand.
+Completion for 1st argument completes your git username.
+Completion for 2nd argument completes repository name for the user on 1st argument.
