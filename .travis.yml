@@ -1,0 +1,18 @@
+language: node_js
+node_js:
+- '4'
+- '6'
+
+branches:
+  only:
+  - master
+
+before_script:
+- npm install
+- npm run lint
+
+script:
+- npm test
+
+after_success:
+- bash <(curl -s https://codecov.io/bash)

@@ -6,13 +6,12 @@ git-browse opens your Github repository with browser.
 
 ## Dependency
 
-- Mac OS only.
 - Depends on `git`
 
 ## Install
 
 ```
-$ npm i -g git-browse
+$ npm install -g git-browse
 ```
 
 ## Usage
@@ -28,10 +27,10 @@ $ git browse repo
 
 ## tab completion
 
-it's Beta. Unfortunately, this version overwrites existing tab completion for git. (i.e. [git-completion](https://github.com/git/git/blob/master/contrib/completion/git-completion.bash))
+```
+$ git-browse --completion >> ~/.bashrc
+```
 
-```
-$ npm i -g git-browse@0.0.8beta
-$ curl https://raw.githubusercontent.com/KamataRyo/git-browse/master/bin/git-browse-competion.sh > ~/.git-browse-competion.sh
-$ echo 'source ~/.git-browse-competion.sh' >> ~/.bashrc
-```
+`git-browse-completion` works against `git-browse` command.
+Completion for 1st argument complete your git username.
+Completion for 2nd argument complete repository name for the user on 1st argument.

@@ -1,6 +1,6 @@
 {
   "name": "git-browse",
-  "version": "0.0.8beta",
+  "version": "0.0.9",
   "description": "git-browse opens a Github repository with browser.",
   "keywords": [
     "git",
@@ -8,14 +8,14 @@
     "terminal"
   ],
   "bin": {
-    "git-browse": "index.js"
+    "git-browse": "./bin/git-browse.js"
   },
-  "preferGlobal": true,
   "engines": {
     "node": ">=4.0.0"
   },
   "scripts": {
-    "test": "$(npm bin)/mocha ./test/*.unit.js"
+    "lint": "eslint .",
+    "test": "babel-node $(npm bin)/isparta cover --report text _mocha"
   },
   "author": "KamataRyo <mugil.cephalus+github.com@gmail.com>",
   "license": "MIT",
@@ -33,10 +33,13 @@
     "host": "github.com"
   },
   "devDependencies": {
+    "babel-cli": "^6.16.0",
+    "eslint": "^3.7.0",
+    "isparta": "^4.0.0",
     "mocha": "^3.0.2",
     "should": "^11.1.0"
   },
   "dependencies": {
-    "git-browse-github-search": "0.0.1"
+    "git-browse-github-search": "0.0.6"
   }
 }
