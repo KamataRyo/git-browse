@@ -10,7 +10,8 @@ describe('version command', () => {
   it('should show version', done => {
     var cmd = `${gitBrowse}`
     exec(cmd, (err, stdout) => {
-      stdout.should.be.a.String().and.match(new RegExp(meta.verison))
+      stdout.should.be.a.String()
+        .and.match(new RegExp(meta.verison))
       done()
     })
   })
@@ -19,14 +20,17 @@ describe('version command', () => {
     var cmd = `${gitBrowse} --completion`
     exec(cmd, (err, stdout) => {
       stdout.should.be.a.String()
+        .and.match(/_git-browse\(\)/)
       done()
     })
   })
 
   it('should exec open with single argument', done => {
     var cmd = `${gitBrowse} git-browse`
-    exec(cmd, err => {
+    exec(cmd, (err, stdout) => {
       should(err, null)
+      stdout.should.be.a.String()
+        .and.match(/github.com\/.+\/git-browse/)
       done()
     })
   })
@@ -34,8 +38,10 @@ describe('version command', () => {
 
   it('should exec open with 2 arguments', done => {
     var cmd = `${gitBrowse} kamataryo git-browse`
-    exec(cmd, err => {
+    exec(cmd, (err, stdout) => {
       should(err, null)
+      stdout.should.be.a.String()
+        .and.match(/kamataryo\/git-browse/)
       done()
     })
   })
