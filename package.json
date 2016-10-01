@@ -1,6 +1,6 @@
 {
   "name": "git-browse",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "git-browse opens a Github repository with browser.",
   "keywords": [
     "git",

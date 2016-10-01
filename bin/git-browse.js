@@ -13,7 +13,7 @@
   if (process.argv.length == 3) {
     if (process.argv[2] == '--completion') {
       var data = '';
-      fs.createReadStream('./bin/git-browse-completion.sh')
+      fs.createReadStream(`${__dirname}/git-browse-completion.sh`)
         .on('data', (chunk) => data += chunk)
         .on('end', () => {
           console.log(`GIT_BROWSE_BINARY_PATH=${__dirname}/../node_modules/.bin/git-browse-github-search`)
