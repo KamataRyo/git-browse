@@ -4,19 +4,22 @@
   var exec = require('child_process').exec
   var os = require('os')
   var fs = require('fs')
-  var meta = require('../package.json')
+  var meta = require('./package.json')
 
   var username
   var reponame
 
   // arguments parsing
-  if (process.argv.length == 3) {
+  if (process.argv.length == 2) {
+    console.log(`${meta.name} v${meta.version}`)
+    return
+  } else if (process.argv.length == 3) {
     if (process.argv[2] == '--completion') {
       var data = '';
-      fs.createReadStream(`${__dirname}/git-browse-completion.sh`)
+      fs.createReadStream(`${__dirname}/bin/git-browse-completion.sh`)
         .on('data', (chunk) => data += chunk)
         .on('end', () => {
-          console.log(`GIT_BROWSE_BINARY_PATH=${__dirname}/../node_modules/.bin/git-browse-github-search`)
+          console.log(`GIT_BROWSE_BINARY_PATH=${__dirname}/node_modules/.bin/git-browse-github-search`)
           console.log(data)
         })
       return
@@ -30,11 +33,6 @@
   } else if (process.argv.length > 3) {
     // case `git browse user repo`
     [username, reponame] = [process.argv[2], process.argv[3]]
-  }
-
-  if (!reponame) {
-    console.log(`${meta.name} v${meta.version}`)
-    return
   }
 
   (new Promise((fulfilled, rejected) => {

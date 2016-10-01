@@ -8,7 +8,7 @@
     "terminal"
   ],
   "bin": {
-    "git-browse": "./bin/git-browse.js"
+    "git-browse": "./bin.js"
   },
   "engines": {
     "node": ">=4.0.0"
@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "babel-cli": "^6.16.0",
+    "babel-preset-es2015": "^6.16.0",
     "eslint": "^3.7.0",
     "isparta": "^4.0.0",
     "mocha": "^3.0.2",

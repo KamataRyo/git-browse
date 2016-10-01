@@ -8,6 +8,9 @@ branches:
   - master
 
 before_script:
+- echo "echo 'Mock command `open` executed.'" > /usr/local/bin/open
+- chmod +x /usr/local/bin/open
+- git config --set user.name 'kamataryo'
 - npm install
 - npm run lint
 
