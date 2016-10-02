@@ -10,8 +10,7 @@ branches:
   - master
 
 before_script:
-
-- git config --set user.name 'kamataryo'
+- git config user.name 'kamataryo'
 - npm install
 - npm run lint
 
