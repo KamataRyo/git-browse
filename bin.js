@@ -1,41 +1,25 @@
 #!/usr/bin/env node
-(() => {
-
-  var exec = require('child_process').exec
-  var os = require('os')
-  var fs = require('fs')
+var showVersion = () => {
+  // exports version
   var meta = require('./package.json')
+  console.log(`${meta.name} v${meta.version}`)
+}
 
-  var username
-  var reponame
+// exports completion script
+var showCompletionScript = () => {
+  var fs = require('fs')
+  var data = '';
+  fs.createReadStream(`${__dirname}/bin/git-browse-completion.sh`)
+    .on('data', (chunk) => data += chunk)
+    .on('end', () => {
+      console.log(`GIT_BROWSE_BINARY_PATH=${__dirname}/node_modules/.bin/git-browse-github-search`)
+      console.log(data)
+    })
+}
 
-  // arguments parsing
-  if (process.argv.length == 2) {
-    console.log(`${meta.name} v${meta.version}`)
-    return
-  } else if (process.argv.length == 3) {
-    if (process.argv[2] == '--completion') {
-      var data = '';
-      fs.createReadStream(`${__dirname}/bin/git-browse-completion.sh`)
-        .on('data', (chunk) => data += chunk)
-        .on('end', () => {
-          console.log(`GIT_BROWSE_BINARY_PATH=${__dirname}/node_modules/.bin/git-browse-github-search`)
-          console.log(data)
-        })
-      return
-    } else if (process.argv[2].includes('/')) {
-      // case `git browse user/repo`
-      [username, reponame] = process.argv[2].split('/')
-    } else {
-      // case `git browse repo`
-      reponame = process.argv[2]
-    }
-  } else if (process.argv.length > 3) {
-    // case `git browse user repo`
-    [username, reponame] = [process.argv[2], process.argv[3]]
-  }
-
+var openInBrowser = (username, reponame) => {
   (new Promise((fulfilled, rejected) => {
+    var exec = require('child_process').exec
     if (!username) {
       // case username not found
       var getGitUser = 'echo $(git config --get user.name)'
@@ -55,6 +39,10 @@
       fulfilled(username)
     }
   })).then((username) => {
+    var os = require('os')
+    var exec = require('child_process').exec
+    var meta = require('./package.json')
+
     reponame = reponame ? reponame : ''
     var open = 'Win32'  == os.type() ? 'start' : 'open'
     var slug = username.toUpperCase() == reponame.toUpperCase() ? username : `${username}/${reponame}`
@@ -68,4 +56,29 @@
     console.log('[error] An error occured.')
     throw err
   })
-})()
+}
+
+var username
+var reponame
+
+// arguments parsing
+if (process.argv.length == 2) {
+  showVersion()
+} else if (process.argv.length == 3) {
+  if (process.argv[2] == '--completion') {
+    showCompletionScript()
+  }
+  else if (process.argv[2].includes('/')) {
+    // case `git browse user/repo`
+    [username, reponame] = process.argv[2].split('/')
+    openInBrowser(username, reponame)
+  } else {
+    // case `git browse repo`
+    reponame = process.argv[2]
+    openInBrowser(username, reponame)
+  }
+} else if (process.argv.length > 3) {
+  // case `git browse user repo`
+  [username, reponame] = [process.argv[2], process.argv[3]]
+  openInBrowser(username, reponame)
+}

@@ -8,7 +8,7 @@ branches:
   - master
 
 before_script:
-- apt-get install xdg-open
+- sudo apt-get install xdg-open
 - alias open='xdg-open'
 - git config --set user.name 'kamataryo'
 - npm install

@@ -4,22 +4,23 @@
   "description": "git-browse opens a Github repository with browser.",
   "keywords": [
     "git",
+    "github",
     "CLI",
     "terminal"
   ],
   "bin": {
-    "git-browse": "./bin.js"
+    "git-browse": "bin.js"
   },
+  "main": "index.js",
   "engines": {
     "node": ">=4.0.0"
   },
   "scripts": {
     "lint": "eslint .",
-    "test": "istanbul cover _mocha"
+    "test": "mocha test/*.js"
   },
   "author": "KamataRyo <mugil.cephalus+github.com@gmail.com>",
   "license": "MIT",
-  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KamataRyo/git-browse.git"
@@ -34,7 +35,6 @@
   },
   "devDependencies": {
     "eslint": "^3.7.0",
-    "istanbul": "^0.4.5",
     "mocha": "^3.0.2",
     "should": "^11.1.0"
   },
