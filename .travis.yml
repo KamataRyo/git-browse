@@ -1,17 +1,16 @@
+os: osx
+
 language: node_js
 node_js:
 - '4'
 - '6'
-
-sudo: true
 
 branches:
   only:
   - master
 
 before_script:
-- sudo apt-get install xdg-open
-- alias open='xdg-open'
+
 - git config --set user.name 'kamataryo'
 - npm install
 - npm run lint
