@@ -2,8 +2,6 @@
 
 [![npm version](https://badge.fury.io/js/git-browse.svg)](https://badge.fury.io/js/git-browse)
 [![Build Status](https://travis-ci.org/KamataRyo/git-browse.svg?branch=master)](https://travis-ci.org/KamataRyo/git-browse)
-[![codecov](https://codecov.io/gh/KamataRyo/git-browse/branch/master/graph/badge.svg)](https://codecov.io/gh/KamataRyo/git-browse)
-
 
 git-browse opens your Github repository with browser.
 
