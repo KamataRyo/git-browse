@@ -2,7 +2,6 @@ var should = require('should')
 var exec = require('child_process').exec
 var meta = require('../package.json')
 
-
 should()
 var gitBrowse = './bin.js'
 
