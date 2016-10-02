@@ -80,7 +80,7 @@ if (process.argv.length == 2) {
   }
 } else if (process.argv.length > 3) {
   // case `git browse user repo`
-  username = process.argv[2].split('/')[0]
-  reponame = process.argv[2].split('/')[1]
+  username = process.argv[2]
+  reponame = process.argv[3]
   openInBrowser(username, reponame)
 }

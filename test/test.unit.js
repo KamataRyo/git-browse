@@ -29,7 +29,7 @@ describe('version command', () => {
     exec(cmd, (err, stdout) => {
       should(err, null)
       stdout.should.be.a.String()
-        .and.match(/github.com\/.+\/git-browse/)
+        .and.match(/github\.com\/kamataryo\/git-browse/i)
       done()
     })
   })
@@ -40,7 +40,7 @@ describe('version command', () => {
     exec(cmd, (err, stdout) => {
       should(err, null)
       stdout.should.be.a.String()
-        .and.match(/kamataryo\/git-browse/)
+        .and.match(/github\.com\/kamataryo\/git-browse/i)
       done()
     })
   })
