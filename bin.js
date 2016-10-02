@@ -70,7 +70,8 @@ if (process.argv.length == 2) {
   }
   else if (process.argv[2].includes('/')) {
     // case `git browse user/repo`
-    [username, reponame] = process.argv[2].split('/')
+    username = process.argv[2].split('/')[0]
+    reponame = process.argv[2].split('/')[1]
     openInBrowser(username, reponame)
   } else {
     // case `git browse repo`
@@ -79,6 +80,7 @@ if (process.argv.length == 2) {
   }
 } else if (process.argv.length > 3) {
   // case `git browse user repo`
-  [username, reponame] = [process.argv[2], process.argv[3]]
+  username = process.argv[2].split('/')[0]
+  reponame = process.argv[2].split('/')[1]
   openInBrowser(username, reponame)
 }
